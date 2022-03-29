@@ -100,7 +100,8 @@ TARGET_KERNEL_SOURCE := kernel/nothing/sm8475
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/waipio_GKI.config \
-    vendor/nothing/waipio_GKI.config
+    vendor/nothing/waipio_GKI.config \
+    vendor/debugfs.config
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist
