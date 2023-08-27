@@ -48,11 +48,18 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl \
+    agmcap \
+    agmcompressplay \
+    agmplay \
     audio.bluetooth.default \
     audio.primary.taro \
     audio.r_submix.default \
     audio.usb.default \
     audioadsprpcd \
+    libagm_compress_plugin \
+    libagm_mixer_plugin \
+    libagmmixer \
+    libagm_pcm_plugin \
     libbatterylistener \
     libhfp_pal \
     libqcompostprocbundle \
@@ -300,7 +307,8 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libcodec2_hidl@1.0.vendor \
-    libcodec2_vndk.vendor
+    libcodec2_vndk.vendor \
+    libpalclient
 
 # Net
 PRODUCT_PACKAGES += \
