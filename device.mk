@@ -144,6 +144,9 @@ PRODUCT_PACKAGES += \
     Pong_DeviceExtras
 
 # Display
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display_id_4630946639017191810.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946639017191810.xml
+
 PRODUCT_PACKAGES += \
     android.hardware.common-V2-ndk_platform.vendor \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
