@@ -10,6 +10,12 @@ git clone --depth=1 https://github.com/Nothing-phone-2-Development/android_kerne
 
 echo 'DONE'
 
+echo 'Cloning PAGlyph Repo'
+# packages/apps/ParanoidGlyphPhone2
+git clone https://github.com/AgBKartikey/packages_apps_ParanoidGlyphPhone2.git packages/apps/ParanoidGlyphPhone2
+
+echo 'DONE'
+
 echo 'Picking build/soong Commits'
 # build/soong
 cd build/soong
