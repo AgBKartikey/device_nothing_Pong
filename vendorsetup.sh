@@ -12,7 +12,7 @@ echo 'DONE'
 
 echo 'Cloning Kernel tree [2/7]'
 # kernel/nothing/sm8475
-git clone --depth=1 https://github.com/Nothing-phone-2-Development/android_kernel_nothing_sm8475.git kernel/nothing/sm8475
+git clone --depth=1 https://github.com/HELLBOY017/kernel_nothing_sm8475.git -b inline kernel/nothing/sm8475
 
 echo 'DONE'
 
