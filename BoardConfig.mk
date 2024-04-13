@@ -10,6 +10,9 @@ BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
 
 DEVICE_PATH := device/nothing/Pong
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := Pong
+
 # A/B
 AB_OTA_UPDATER := true
 
