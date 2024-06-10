@@ -38,6 +38,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := Nothing/Pong/Pong:12/SKQ1.230722.001/2404101247:user/release-keys
 
+# Build Configs
+BUILD_USERNAME := Miki
+BUILD_HOSTNAME := EvolutionXYZ
+
 # GMS
 TARGET_USES_MINI_GAPPS := true
 
