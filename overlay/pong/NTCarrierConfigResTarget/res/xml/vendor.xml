@@ -29,6 +29,9 @@
         <boolean name="allow_hold_call_during_emergency_bool" value="false" />
         <int name="ims.sa_disable_policy_int" value="3" />
         <boolean name="vonr_enabled_bool" value="false" />
+        <boolean name="hide_enable_2g_bool" value="true" />
+        <int name="lte_plus_threshold_bandwidth_khz_int" value="0" />
+        <string name="carrier_name_string" />
     </carrier_config>
     <carrier_config mcc="001" mnc="01">
         <boolean name="call_barring_visibility_bool" value="true" />
@@ -41,8 +44,6 @@
             <item value="type" />
             <item value="ims,mms" />
         </string-array>
-        <boolean name="editable_wfc_mode_bool" value="false" />
-        <boolean name="editable_wfc_roaming_mode_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="208" mnc="16">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
@@ -80,6 +81,12 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="hide_ims_apn_bool" value="true" />
     </carrier_config>
+    <carrier_config mcc="404">
+        <int name="lte_plus_threshold_bandwidth_khz_int" value="0" />
+    </carrier_config>
+    <carrier_config mcc="405">
+        <int name="lte_plus_threshold_bandwidth_khz_int" value="0" />
+    </carrier_config>
     <carrier_config mcc="440" mnc="10">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -106,10 +113,12 @@
     <carrier_config mcc="455" mnc="02">
         <boolean name="vonr_enabled_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="455" mnc="07">
         <boolean name="vonr_enabled_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="460" mnc="05">
         <boolean name="hide_enabled_5g_bool" value="true" />
@@ -140,6 +149,8 @@
     <carrier_config cid="2" name="EE">
         <int name="wfc_spn_format_idx_int" value="1" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="editable_wfc_mode_bool" value="false" />
+        <boolean name="hide_preferred_network_type_bool" value="true" />
     </carrier_config>
     <carrier_config cid="3" name="Telekom Deutschland (DE)">
         <boolean name="editable_wfc_mode_bool" value="false" />
@@ -455,6 +466,7 @@
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
         <string name="carrier_name_string">Odido</string>
+        <boolean name="editable_voicemail_number_setting_bool" value="false" />
     </carrier_config>
     <carrier_config cid="6" name="T-Mobile">
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
@@ -501,6 +513,7 @@
         <boolean name="enableSMSDeliveryReports" value="true" />
         <int name="smsToMmsTextThreshold" value="-1" />
         <string name="default_vm_number_string">+36309888444</string>
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="9" name="Hrvatski Telekom">
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
@@ -532,9 +545,16 @@
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
+    <carrier_config cid="14" name="A1">
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
     <carrier_config cid="15" name="Vodafone">
         <boolean name="carrier_vt_available_bool" value="false" />
-    </carrier_config>>
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="16" name="Swisscom">
+        <boolean name="editable_wfc_mode_bool" value="true" />
+    </carrier_config>
     <carrier_config cid="18" name="Vodafone">
         <boolean name="enableMMSDeliveryReports" value="true" />
         <boolean name="enableMMSReadReports" value="true" />
@@ -542,6 +562,7 @@
         <boolean name="groupChatDefaultsToMMS" value="true" />
         <int name="smsToMmsTextThreshold" value="5" />
         <string name="default_vm_number_string">121</string>
+        <int name="wfc_spn_format_idx_int" value="11" />
     </carrier_config>
     <carrier_config cid="19" name="Vodafone">
         <int name="call_barring_default_service_class_int" value="0" />
@@ -551,20 +572,13 @@
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="5" />
         <string name="default_vm_number_string">171</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -575,6 +589,7 @@
             <item value="611" />
             <item value="621" />
         </string-array>
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="20" name="Vodafone">
         <boolean name="enabledMMS" value="false" />
@@ -584,20 +599,13 @@
         <boolean name="display_hd_audio_property_bool" value="false" />
         <string name="default_vm_number_string">+31654501233</string>
         <string name="carrier_name_string">vodafone NL</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -631,20 +639,13 @@
         <int name="maxMessageSize" value="614400" />
         <int name="volte_replacement_rat_int" value="3" />
         <string name="default_vm_number_string">123</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -665,20 +666,13 @@
         <int name="smsToMmsTextThreshold" value="10" />
         <int name="maxMessageSize" value="307200" />
         <string name="default_vm_number_string">+40722033334</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -697,20 +691,13 @@
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="10" />
         <string name="default_vm_number_string">132</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -728,20 +715,13 @@
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="5" />
         <string name="default_vm_number_string">5500</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -756,26 +736,18 @@
         <int name="emergency_notification_delay_int" value="0" />
     </carrier_config>
     <carrier_config cid="26" name="Vodafone">
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="enableMMSDeliveryReports" value="false" />
         <boolean name="enableMMSReadReports" value="false" />
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="5" />
         <string name="default_vm_number_string">22177</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -789,6 +761,8 @@
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="27" name="SFR">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="28" name="Vodafone">
         <boolean name="enableMMSDeliveryReports" value="true" />
@@ -796,20 +770,13 @@
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <boolean name="voicemail_notification_persistent_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="10" />
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -830,20 +797,13 @@
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="10" />
         <string name="default_vm_number_string">42020</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -855,13 +815,15 @@
             <item value="621" />
         </string-array>
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="30" name="Optus">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="31" name="Singtel">
         <boolean name="call_barring_visibility_bool" value="true" />
         <int name="call_barring_default_service_class_int" value="0" />
         <boolean name="config_disable_clir_over_ut" value="true" />
-        <boolean name="vonr_enabled_bool" value="true" />
-        <boolean name="vonr_on_by_default_bool" value="true" />
     </carrier_config>
     <carrier_config cid="32" name="Orange">
         <boolean name="vvm_prefetch_bool" value="true" />
@@ -878,6 +840,7 @@
         <string-array name="vvm_disabled_capabilities_string_array" num="1">
             <item value="STARTTLS" />
         </string-array>
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="33" name="TIM">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
@@ -922,6 +885,7 @@
         <int name="maxMessageSize" value="1048576" />
         <string name="default_vm_number_string">242</string>
         <string name="config_ims_package_override_string">com.google.android.ims</string>
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="679" name="Yoigo">
         <boolean name="hide_ims_apn_bool" value="true" />
@@ -929,6 +893,17 @@
         <boolean name="enableWapPushSI" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <string name="default_vm_number_string">+34633633633</string>
+    </carrier_config>
+    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="Yoigo">
+    </carrier_config>
+    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="MASMOVIL">
+    </carrier_config>
+    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="Pepephone">
+    </carrier_config>
+    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="Virgin telco">
+    </carrier_config>
+    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="EUSKALTEL">
     </carrier_config>
     <carrier_config cid="717" name="Virgin">
         <string name="default_vm_number_string">+447458333222</string>
@@ -936,6 +911,8 @@
     <carrier_config cid="718" name="EE">
         <int name="wfc_spn_format_idx_int" value="1" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="editable_wfc_mode_bool" value="false" />
+        <boolean name="hide_preferred_network_type_bool" value="true" />
     </carrier_config>
     <carrier_config cid="747" name="COSMOTE">
         <boolean name="carrier_vt_available_bool" value="false" />
@@ -952,6 +929,7 @@
         <int name="maxMessageSize" value="614400" />
         <int name="smsToMmsTextThreshold" value="-1" />
         <string name="default_vm_number_string">+306971000123</string>
+        <int name="wfc_spn_format_idx_int" value="11" />
     </carrier_config>
     <carrier_config cid="759" name="3G Radio System/HKCSL3G">
         <boolean name="carrier_volte_available_bool" value="true" />
@@ -1011,6 +989,9 @@
     <carrier_config cid="792" name="3">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
+    <carrier_config cid="793" name="EIR">
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
     <carrier_config cid="796" name="Partner">
         <boolean name="carrier_supports_ss_over_ut_bool" value="false" />
         <int name="call_barring_default_service_class_int" value="0" />
@@ -1025,6 +1006,9 @@
         <int name="call_barring_default_service_class_int" value="0" />
         <boolean name="config_hide_vt_callforward_option" value="false" />
     </carrier_config>
+    <carrier_config cid="849" name="Orange Jordan">
+        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    </carrier_config>
     <carrier_config cid="850" name="NTT DOCOMO">
         <boolean name="use_call_forwarding_ussd_bool" value="true" />
         <int name="call_waiting_service_class_int" value="0" />
@@ -1036,8 +1020,14 @@
     <carrier_config cid="892" name="Telia">
         <int name="maxMessageSize" value="2097152" />
     </carrier_config>
+    <carrier_config cid="893" name="BITĖ">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
     <carrier_config cid="894" name="Tele2">
         <boolean name="carrier_supports_ss_over_ut_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="895" name="Luxembourg">
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="896" name="Tango">
         <boolean name="carrier_vt_available_bool" value="false" />
@@ -1054,12 +1044,23 @@
         <string-array name="vvm_disabled_capabilities_string_array" num="1">
             <item value="STARTTLS" />
         </string-array>
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="898" name="LMT">
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    </carrier_config>
+    <carrier_config cid="958" name="Telenor">
+    </carrier_config>
+    <carrier_config cid="959" name="Telia">
+        <int name="maxMessageSize" value="2097152" />
     </carrier_config>
     <carrier_config cid="969" name="2degrees">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="970" name="Omantel">
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1010" name="Telekom Romania">
         <boolean name="tty_supported_bool" value="true" />
@@ -1085,12 +1086,26 @@
         <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_on_by_default_bool" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+        <boolean name="hide_enable_2g_bool" value="false" />
+        <int name="wifi.carrier_profiles_version_int" value="1" />
+        <string-array name="wifi.network_profiles_string_array" num="1">
+            <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>             &lt;WifiNetwork>                 &lt;SSID>  AIS SMART Login&lt;/SSID>                     &lt;Credential>                         &lt;SIM>                             &lt;EAPType>18&lt;/EAPType>                         &lt;/SIM>                     &lt;/Credential>              &lt;/WifiNetwork>" />
+        </string-array>
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1098" name="AIS">
         <boolean name="config_hide_vt_callforward_option" value="false" />
         <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_on_by_default_bool" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+        <boolean name="hide_enable_2g_bool" value="false" />
+        <int name="wifi.carrier_profiles_version_int" value="1" />
+        <string-array name="wifi.network_profiles_string_array" num="1">
+            <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>             &lt;WifiNetwork>                 &lt;SSID>  AIS SMART Login&lt;/SSID>                     &lt;Credential>                         &lt;SIM>                             &lt;EAPType>18&lt;/EAPType>                         &lt;/SIM>                     &lt;/Credential>              &lt;/WifiNetwork>" />
+        </string-array>
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1187" name="AT&amp;T">
         <boolean name="carrier_vt_available_bool" value="false" />
@@ -1110,9 +1125,6 @@
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
     </carrier_config>
-    <carrier_config cid="1466" name="3">
-        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
-    </carrier_config>
     <carrier_config cid="1345" name="Telstra">
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
@@ -1129,15 +1141,20 @@
         <string-array name="vvm_disabled_capabilities_string_array" num="1">
             <item value="STARTTLS" />
         </string-array>
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1367" name="BASE">
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1370" name="A1">
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1371" name="Yettel">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1413" name="Sunrise">
         <string name="vvm_type_string">vvm_type_omtp</string>
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1414" name="Salt">
         <int name="smsToMmsTextThreshold" value="6" />
@@ -1173,6 +1190,7 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="hide_carrier_name_extra_bool" value="true" />
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1452" name="Vodafone">
         <boolean name="enableMMSDeliveryReports" value="true" />
@@ -1182,19 +1200,13 @@
         <boolean name="groupChatDefaultsToMMS" value="false" />
         <int name="smsToMmsTextThreshold" value="6" />
         <string name="default_vm_number_string">+420608989898</string>
-        <string-array name="feature_access_codes_string_array" num="21">
-            <item value="21" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -1212,6 +1224,7 @@
         <int name="maxMessageSize" value="614400" />
         <boolean name="editable_wfc_roaming_mode_bool" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1454" name="o2">
         <boolean name="smsUsesSimpleCharactersOnly" value="true" />
@@ -1219,6 +1232,7 @@
         <int name="maxMessageSize" value="614400" />
         <boolean name="editable_wfc_roaming_mode_bool" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1456" name="o2">
         <boolean name="smsUsesSimpleCharactersOnly" value="true" />
@@ -1226,11 +1240,21 @@
         <int name="maxMessageSize" value="614400" />
         <boolean name="editable_wfc_roaming_mode_bool" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
+    </carrier_config>
+    <carrier_config cid="1463" name="TDC Mobil">
+    </carrier_config>
+    <carrier_config cid="1464" name="Telenor">
+    </carrier_config>
+    <carrier_config cid="1466" name="H3G">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1475" name="Elisa">
         <boolean name="hide_carrier_name_extra_bool" value="true" />
         <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_on_by_default_bool" value="true" />
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+        <boolean name="vonr_setting_visibility_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1480" name="Telia">
         <int name="maxMessageSize" value="2097152" />
@@ -1246,6 +1270,7 @@
         </int-array>
         <boolean name="hide_carrier_name_extra_bool" value="true" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1492" name="O2">
         <boolean name="vvm_cellular_data_required_bool" value="true" />
@@ -1280,7 +1305,6 @@
     </carrier_config>
     <carrier_config cid="1519" name="Telestet">
         <boolean name="carrier_name_override_bool" value="true" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1526" name="1O1O / csl / Club Sim">
         <boolean name="carrier_volte_available_bool" value="true" />
@@ -1304,9 +1328,11 @@
     </carrier_config>
     <carrier_config cid="1530" name="A1/Tomato">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1534" name="Yettel">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1535" name="Vodafone">
         <boolean name="enableMMSDeliveryReports" value="true" />
@@ -1315,20 +1341,13 @@
         <boolean name="groupChatDefaultsToMMS" value="false" />
         <int name="smsToMmsTextThreshold" value="10" />
         <string name="default_vm_number_string">170</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -1341,39 +1360,63 @@
         </string-array>
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
+    <carrier_config cid="1543" name="Reliance">
+    </carrier_config>
     <carrier_config cid="1549" name="BSNL">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
-        <boolean name="config_hide_vt_callforward_option" value="false" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1573" name="WINDTRE">
-        <int name="enhanced_4g_lte_title_variant_int" value="1" />
+        <int name="enhanced_4g_lte_title_variant_int" value="3" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="call_barring_visibility_bool" value="true" />
         <string name="default_vm_number_string">4200</string>
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1575" name="WINDTRE">
-        <int name="enhanced_4g_lte_title_variant_int" value="1" />
+        <int name="enhanced_4g_lte_title_variant_int" value="3" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="call_barring_visibility_bool" value="true" />
         <string name="default_vm_number_string">4200</string>
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1578" name="Fastlink">
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1581" name="au">
         <boolean name="carrier_vt_available_bool" value="false" />
+        <boolean name="support_manage_ims_conference_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1614" name="CTM">
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+        <boolean name="vonr_on_by_default_bool" value="true" />
+        <boolean name="vonr_setting_visibility_bool" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1619" name="Vodafone">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1620" name="go mobile">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1628" name="Maxis/Hotlink">
+        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1630" name="Digi">
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    </carrier_config>
+    <carrier_config cid="1632" name="U Mobile">
+    </carrier_config>
+    <carrier_config cid="1633" name="Celcom">
     </carrier_config>
     <carrier_config cid="1659" name="Orange">
         <boolean name="mmsRoamingAutoRetrieveByDefault" value="true" />
@@ -1412,6 +1455,7 @@
     <carrier_config cid="1675" name="Ooredoo">
         <int name="call_barring_default_service_class_int" value="0" />
         <boolean name="carrier_vt_available_bool" value="false" />
+        <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1676" name="Orange La Réunion">
         <boolean name="carrier_supports_ss_over_ut_bool" value="false" />
@@ -1420,13 +1464,20 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="prefer_2g_bool" value="true" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1684" name="Mobily">
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="prefer_2g_bool" value="true" />
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1690" name="Telia">
         <int name="maxMessageSize" value="2097152" />
+        <string-array name="carrier_metered_apn_types_strings" num="3">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+        </string-array>
     </carrier_config>
     <carrier_config cid="1691" name="3 (Hi3G Access AB)">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
@@ -1434,6 +1485,8 @@
     <carrier_config cid="1695" name="Telenor Sverige AB">
         <boolean name="vonr_enabled_bool" value="false" />
         <boolean name="vonr_setting_visibility_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1696" name="Tele2">
     </carrier_config>
     <carrier_config cid="1706" name="M1">
         <string name="default_preferred_apn_name_string">sunsurf</string>
@@ -1447,6 +1500,7 @@
         <boolean name="call_barring_visibility_bool" value="true" />
         <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_on_by_default_bool" value="true" />
+        <int name="call_barring_default_service_class_int" value="1" />
     </carrier_config>
     <carrier_config cid="1709" name="SI Mobil">
         <boolean name="call_barring_visibility_bool" value="true" />
@@ -1502,6 +1556,7 @@
         <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
         <boolean name="carrier_supports_ss_over_ut_bool" value="false" />
         <int name="call_barring_default_service_class_int" value="0" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
     </carrier_config>
     <carrier_config cid="1882" name="亞太電信 Asia Pacific Telecom">
         <boolean name="carrier_volte_available_bool" value="true" />
@@ -1520,6 +1575,7 @@
         <boolean name="editable_wfc_mode_bool" value="true" />
         <boolean name="hide_enhanced_4g_lte_bool" value="false" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
     </carrier_config>
     <carrier_config cid="1886" name="台灣之星 T Star">
         <string-array name="apn_hide_rule_strings_array" num="2">
@@ -1551,6 +1607,18 @@
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
+    <carrier_config cid="1896" name="dtac">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1897" name="dtac">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1898" name="True Move">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1899" name="Viettel Telecom">
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
     <carrier_config cid="1900" name="OneCall">
         <int name="maxMessageSize" value="2097152" />
     </carrier_config>
@@ -1559,6 +1627,11 @@
     </carrier_config>
     <carrier_config cid="1958" name="Free">
         <boolean name="carrier_vt_available_bool" value="false" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <boolean name="vonr_enabled_bool" value="true" />
+        <boolean name="carrier_supports_ss_over_ut_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1959" name="Digi">
     </carrier_config>
     <carrier_config cid="1961" name="Airtel">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
@@ -1576,7 +1649,15 @@
     <carrier_config cid="1965" name="Telkom">
         <boolean name="call_forwarding_when_busy_supported_bool" value="false" />
     </carrier_config>
+    <carrier_config cid="1969" name="Asiacell">
+        <boolean name="carrier_vt_available_bool" value="false" />
+        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    </carrier_config>
     <carrier_config cid="1970" name="du">
+        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1971" name="Zain">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
@@ -1593,11 +1674,16 @@
             <item value="supl" />
         </string-array>
     </carrier_config>
+    <carrier_config cid="1997" name="TrueMove H 4G LTE">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="1999" name="VIVACOM">
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
     <carrier_config cid="2014" name="Zain Bahrain">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2017" name="Yes 5G">
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
     </carrier_config>
     <carrier_config cid="2018" name="Reliance Jio">
@@ -1606,12 +1692,13 @@
         <boolean name="config_disable_clir_over_ut" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="false" />
         <int name="ims.sa_disable_policy_int" value="1" />
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_on_by_default_bool" value="true" />
-        <string-array name="carrier_certificate_string_array" num="1">
-            <item value="FBBD7CC8E99BF58CDC03D6FC006B9DABFB5D2B7AEA00B69DBCBC783A15AA455B" />
-        </string-array>
+        <int name="spn_display_condition_override_int" value="1" />
+    </carrier_config>
+    <carrier_config cid="2027" name="Airvoice">
     </carrier_config>
     <carrier_config cid="2038" name="unifi mobile">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
@@ -1648,8 +1735,7 @@
         <string name="default_vm_number_string">3311</string>
     </carrier_config>
     <carrier_config cid="2093" name="Tesco">
-        <boolean name="carrier_volte_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2094" name="telering">
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
@@ -1663,6 +1749,9 @@
         <int name="smsToMmsTextThreshold" value="5" />
         <int name="maxMessageSize" value="307200" />
         <string name="default_vm_number_string">+436762200</string>
+    </carrier_config>
+    <carrier_config cid="2095" name="Ben">
+        <string name="default_vm_number_string">+31624001233</string>
     </carrier_config>
     <carrier_config cid="2106" name="IIJmio">
         <int name="call_waiting_service_class_int" value="0" />
@@ -1688,6 +1777,8 @@
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
     </carrier_config>
+    <carrier_config cid="2129" name="ALDI mobile">
+    </carrier_config>
     <carrier_config cid="2237" name="China Telecom">
         <boolean name="hide_enabled_5g_bool" value="true" />
         <int-array name="carrier_nr_availabilities_int_array" num="2">
@@ -1695,6 +1786,7 @@
             <item value="2" />
         </int-array>
         <boolean name="vonr_enabled_bool" value="true" />
+        <int name="spn_display_condition_override_int" value="1" />
     </carrier_config>
     <carrier_config cid="2280" name="Pepephone">
         <boolean name="hide_ims_apn_bool" value="true" />
@@ -1724,6 +1816,7 @@
         <int name="maxMessageSize" value="614400" />
         <boolean name="editable_wfc_roaming_mode_bool" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="2361" name="o2">
         <boolean name="smsUsesSimpleCharactersOnly" value="true" />
@@ -1731,6 +1824,7 @@
         <int name="maxMessageSize" value="614400" />
         <boolean name="editable_wfc_roaming_mode_bool" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="2364" name="Vodafone">
         <boolean name="enableMMSDeliveryReports" value="true" />
@@ -1759,6 +1853,9 @@
         <int name="carrier_default_wfc_ims_mode_int" value="2" />
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
     </carrier_config>
+    <carrier_config cid="2366" name="Swisscom">
+        <boolean name="editable_wfc_mode_bool" value="true" />
+    </carrier_config>
     <carrier_config cid="2367" name="T-Mobile">
         <boolean name="enableWapPushSI" value="true" />
         <boolean name="mmsRoamingAutoRetrieveByDefault" value="true" />
@@ -1782,6 +1879,7 @@
     <carrier_config cid="2368" name="Vodafone">
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2369" name="Orange">
         <boolean name="smsEncodingChangeable" value="true" />
@@ -1792,6 +1890,7 @@
         <int name="maxMessageSize" value="1048576" />
         <string name="default_vm_number_string">242</string>
         <string name="config_ims_package_override_string">com.google.android.ims</string>
+        <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2378" name="vi">
         <boolean name="config_hide_vt_callforward_option" value="true" />
@@ -1830,6 +1929,7 @@
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
         <string name="carrier_name_string">Odido</string>
+        <boolean name="editable_voicemail_number_setting_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2387" name="Vodafone">
         <boolean name="enableMMSDeliveryReports" value="true" />
@@ -1838,20 +1938,13 @@
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="5" />
         <string name="default_vm_number_string">171</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -1862,6 +1955,13 @@
             <item value="611" />
             <item value="621" />
         </string-array>
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="2391" name="Vodafone">
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="2393" name="Vodafone">
+        <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2394" name="T-Mobile">
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
@@ -1904,20 +2004,13 @@
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
         <int name="smsToMmsTextThreshold" value="5" />
         <string name="default_vm_number_string">5500</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -1939,20 +2032,13 @@
         <boolean name="groupChatDefaultsToMMS" value="false" />
         <int name="smsToMmsTextThreshold" value="6" />
         <string name="default_vm_number_string">+420608989898</string>
-        <string-array name="feature_access_codes_string_array" num="22">
-            <item value="21" />
-            <item value="22" />
-            <item value="23" />
-            <item value="32" />
+        <string-array name="feature_access_codes_string_array" num="15">
             <item value="45" />
             <item value="46" />
-            <item value="51" />
             <item value="112" />
             <item value="114" />
             <item value="121" />
-            <item value="131" />
             <item value="132" />
-            <item value="153" />
             <item value="155" />
             <item value="157" />
             <item value="211" />
@@ -1971,6 +2057,7 @@
         <boolean name="groupChatDefaultsToMMS" value="true" />
         <int name="smsToMmsTextThreshold" value="5" />
         <string name="default_vm_number_string">121</string>
+        <int name="wfc_spn_format_idx_int" value="11" />
     </carrier_config>
     <carrier_config cid="2401" name="Magyar Telekom">
         <boolean name="show_iccid_in_sim_status_bool" value="true" />
@@ -1990,6 +2077,7 @@
         <boolean name="additional_settings_caller_id_visibility_bool" value="false" />
         <boolean name="call_forwarding_visibility_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
     </carrier_config>
     <carrier_config cid="2434" name="giga_sg">
         <boolean name="hide_ims_apn_bool" value="true" />
@@ -2001,11 +2089,16 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="call_barring_visibility_bool" value="true" />
     </carrier_config>
+    <carrier_config gid1="0000000099" mcc="222" mnc="88" name="VERY">
+    </carrier_config>
+    <carrier_config gid1="0000000099" mcc="222" mnc="99" name="VERY">
+    </carrier_config>
     <carrier_config cid="2450" name="SUN Mobile">
         <boolean name="editable_wfc_mode_bool" value="false" />
         <int-array name="carrier_nr_availabilities_int_array" num="1">
             <item value="1" />
         </int-array>
+        <boolean name="hide_ims_apn_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2468" name="Odido">
         <boolean name="smsUsesSimpleCharactersOnly" value="true" />
@@ -2024,6 +2117,18 @@
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
         <string name="carrier_name_string">Odido</string>
+        <boolean name="editable_voicemail_number_setting_bool" value="false" />
+        <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+    </carrier_config>
+    <carrier_config cid="2499" name="Belong">
+    </carrier_config>
+    <carrier_config cid="2500" name="Telechoice">
+    </carrier_config>
+    <carrier_config cid="2501" name="Woolworths">
+    </carrier_config>
+    <carrier_config cid="2502" name="NuMobile">
+    </carrier_config>
+    <carrier_config cid="2503" name="Boost">
     </carrier_config>
     <carrier_config cid="2507" name="UPC">
         <string name="default_vm_number_string">+41784091233</string>
@@ -2034,6 +2139,8 @@
     <carrier_config cid="2510" name="Melita">
         <int name="lte_plus_threshold_bandwidth_khz_int" value="0" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
     <carrier_config cid="2529" name="DOCOMO MVNO">
         <boolean name="use_call_forwarding_ussd_bool" value="true" />
@@ -2043,14 +2150,44 @@
         <int name="carrier_ussd_method_int" value="1" />
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
+    <carrier_config cid="2530" name="Simpel">
+        <string name="default_vm_number_string">+31624001233</string>
+    </carrier_config>
     <carrier_config cid="2536" name="1and1">
         <int name="carrier_default_wfc_ims_mode_int" value="10" />
+    </carrier_config>
+    <carrier_config cid="2540" name="mate">
+    </carrier_config>
+    <carrier_config cid="2541" name="Exetel">
+    </carrier_config>
+    <carrier_config cid="2542" name="Konec">
+    </carrier_config>
+    <carrier_config cid="2543" name="More">
+    </carrier_config>
+    <carrier_config cid="2544" name="TANGERINE">
+    </carrier_config>
+    <carrier_config cid="2545" name="Your provider">
+    </carrier_config>
+    <carrier_config cid="2547" name="Telet">
+        <boolean name="carrier_volte_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config mcc="999" mnc="99" name="Telet">
+        <boolean name="carrier_volte_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="2548" name="Ice Norway">
+        <string-array name="non_roaming_operator_string_array" num="1">
+            <item value="24202" />
+        </string-array>
     </carrier_config>
     <carrier_config cid="2555" name="Vimla">
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="vonr_enabled_bool" value="false" />
         <boolean name="vonr_setting_visibility_bool" value="false" />
+    </carrier_config>
+    <carrier_config cid="2572" name="Southern">
+    </carrier_config>
+    <carrier_config cid="2573" name="Everyday">
     </carrier_config>
     <carrier_config cid="10002" name="o2prepaid_gb">
         <boolean name="carrier_volte_available_bool" value="false" />
