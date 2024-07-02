@@ -32,7 +32,6 @@ gh_ctrl.ko
 gh_dbl.ko
 gh_msgq.ko
 gh_rm_drv.ko
-gh_virt_wdt.ko
 hwkm.ko
 icc-bcm-voter.ko
 icc-debug.ko
@@ -76,7 +75,6 @@ spmi-pmic-arb.ko
 qcom-reboot-reason.ko
 qcom_rpmh.ko
 qcom-scm.ko
-qcom_wdt_core.ko
 qnoc-diwali.ko
 qnoc-qos.ko
 qrtr.ko
