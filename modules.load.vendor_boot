@@ -32,7 +32,6 @@ gh_msgq.ko
 gh_rm_drv.ko
 hwkm.ko
 icc-bcm-voter.ko
-icc-debug.ko
 iommu-logger.ko
 kryo_arm64_edac.ko
 llcc-qcom.ko
