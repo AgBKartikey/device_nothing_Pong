@@ -44,3 +44,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-nothing
 # Flags
 TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
+TARGET_USES_DOLBY := true
