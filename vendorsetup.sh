@@ -1,22 +1,19 @@
 echo 'Starting vendorsetup processes needed for your device'
 
 # Stuffs to rm -rf
-rm -rf vendor/nothing/Pong
-rm -rf kernel/nothing/sm8475
 rm -rf hardware/qcom-caf/sm8450/display
 rm -rf device/qcom/sepolicy_vndr/sm8450
 rm -rf packages/apps/ParanoidGlyph
-rm -rf vendor/nothing/camera
 
 echo 'Cloning Vendor tree [1/6]'
 # vendor/nothing/Pong
-git clone https://gitlab.com/RealYasin/vendor_nothing_pong.git vendor/nothing/Pong
+git clone https://github.com/AgBKartikey/vendor-nothing-Pong.git -b UDC vendor/nothing/Pong
 
 echo 'DONE'
 
 echo 'Cloning Kernel tree [2/6]'
 # kernel/nothing/sm8475
-git clone --depth=1 https://github.com/HELLBOY017/kernel_nothing_sm8475.git -b inline kernel/nothing/sm8475
+git clone --depth=1 https://github.com/AgBKartikey/kernel_nothing_sm8475.git -b inline kernel/nothing/sm8475 && cd kernel/nothing/sm8475 && git submodule init && git submodule update --remote && cd ../../..
 
 echo 'DONE'
 
@@ -32,14 +29,14 @@ git clone https://github.com/PongxViolet/device_qcom_sepolicy_vndr.git device/qc
 
 echo 'DONE'
 
-echo 'Cloning Dolby [5/6]'
-# hardware/dolby
-git clone https://github.com/FlamingoOS-Devices/hardware_dolby.git hardware/dolby
+echo 'Cloning PAGlyph Repo [5/6]'
+# packages/apps/ParanoidGlyph
+git clone https://github.com/ProjectGhostOS/android_packages_apps_ParanoidGlyph.git packages/apps/ParanoidGlyph
 
 echo 'DONE'
 
-echo 'Cloning PAGlyph Repo [6/6]'
-# packages/apps/ParanoidGlyph
-git clone https://github.com/ProjectGhostOS/android_packages_apps_ParanoidGlyph.git packages/apps/ParanoidGlyph
+echo 'Cloning Dolby [6/6]'
+# hardware/dolby
+git clone https://github.com/FlamingoOS-Devices/hardware_dolby.git hardware/dolby
 
 echo 'Done and Completed'
