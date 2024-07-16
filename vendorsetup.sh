@@ -7,7 +7,7 @@ rm -rf packages/apps/ParanoidGlyph
 
 echo 'Cloning Vendor tree [1/6]'
 # vendor/nothing/Pong
-git clone https://github.com/AgBKartikey/vendor-nothing-Pong.git -b UDC vendor/nothing/Pong
+git clone https://gitlab.com/AgBKartikey/vendor_nothing_Pong.git -b UDC vendor/nothing/Pong
 
 echo 'DONE'
 
