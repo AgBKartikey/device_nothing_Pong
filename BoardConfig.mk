@@ -101,6 +101,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/waipio_GKI.config \
     vendor/nothing/waipio_GKI.config \
     vendor/debugfs.config
+TARGET_KERNEL_CLANG_VERSION := r487747c
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist
