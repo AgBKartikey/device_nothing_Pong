@@ -49,7 +49,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl \
     audio.bluetooth.default \
-    audio.primary.taro \
     audio.r_submix.default \
     audio.usb.default \
     audioadsprpcd \
@@ -58,6 +57,7 @@ PRODUCT_PACKAGES += \
     libagmmixer \
     libagm_pcm_plugin \
     libbatterylistener \
+    libfmpal \
     libhfp_pal \
     libqcompostprocbundle \
     libqcomvisualizer \
