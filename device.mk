@@ -364,6 +364,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Paranoid Glyph
+PRODUCT_PACKAGES += \
+    ParanoidGlyphPhone2
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
