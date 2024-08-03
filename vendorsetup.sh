@@ -9,6 +9,13 @@ git clone --depth=1 https://github.com/AgBKartikey/android_kernel_nothing_sm8475
 
 echo 'DONE'
 
+echo 'Patching KernelSU'
+cd kernel/nothing/sm8475
+curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+cd ../../../
+
+echo 'DONE'
+
 echo 'Cloning Glyph Repo'
 # packages/apps/ParanoidGlyphPhone2
 git clone https://github.com/AgBKartikey/packages_apps_ParanoidGlyphPhone2.git packages/apps/ParanoidGlyphPhone2
