@@ -14,7 +14,7 @@ $(call inherit-product, device/nothing/Pong/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_Pong
+PRODUCT_NAME := orion_Pong
 PRODUCT_DEVICE := Pong
 PRODUCT_MANUFACTURER := nothing
 PRODUCT_BRAND := Nothing
@@ -33,3 +33,15 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
 
 BUILD_FINGERPRINT := Nothing/Pong/Pong:12/SKQ1.230722.001/2406280430:user/release-keys
+
+# Orion Flags
+ORION_MAINTAINER := AgBKartikey
+ORION_MAINTAINER_LINK := https://t.me/AgBKartikey
+ORION_GAPPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_HAS_UDFPS :=  true/false
+
+# recomended true
+BUILD_GOOGLE_CONTACTS := true
+BUILD_GOOGLE_MESSAGE := true
