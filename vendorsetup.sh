@@ -20,4 +20,10 @@ echo 'Cloning Glyph Repo'
 # packages/apps/ParanoidGlyphPhone2
 git clone https://github.com/AgBKartikey/packages_apps_ParanoidGlyphPhone2.git packages/apps/ParanoidGlyphPhone2
 
+echo 'DONE'
+
+echo 'Cloning Dolby Repo'
+# hardware/dolby
+git clone https://github.com/AgBKartikey/hardware_dolby.git hardware/dolby
+
 echo 'DONE & COMPLETED'
