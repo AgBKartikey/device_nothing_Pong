@@ -555,3 +555,6 @@ PRODUCT_BOOT_JARS += \
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/nothing/Pong/Pong-vendor.mk)
+
+# BCR
+$(call inherit-product, vendor/bcr/bcr.mk)
