@@ -26,4 +26,10 @@ echo 'Cloning Dolby Repo'
 # hardware/dolby
 git clone https://github.com/AgBKartikey/hardware_dolby.git hardware/dolby
 
+echo 'DONE'
+
+echo 'Cloning BCR Repo'
+# vendor/bcr
+git clone https://github.com/AgBKartikey/vendor_bcr.git vendor/bcr
+
 echo 'DONE & COMPLETED'
