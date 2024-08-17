@@ -1,5 +1,5 @@
 echo 'Cloning Vendor Repo'
-git clone --depth=1 https://gitlab.com/AgBKartikey/vendor_nothing_Pong.git vendor/nothing/Pong
+git clone --depth=4 https://gitlab.com/AgBKartikey/vendor_nothing_Pong.git vendor/nothing/Pong
 
 echo 'DONE'
 
@@ -17,6 +17,6 @@ echo 'DONE'
 
 echo 'Cloning Dolby Repo'
 # hardware/dolby
-git clone https://github.com/AgBKartikey/hardware_dolby.git hardware/dolby
+git clone https://github.com/AgBKartikey/hardware_dolby.git -b DM hardware/dolby
 
 echo 'DONE & COMPLETED'
