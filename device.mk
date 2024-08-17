@@ -562,3 +562,7 @@ $(call inherit-product, vendor/nothing/Pong/Pong-vendor.mk)
 
 # BCR
 $(call inherit-product, vendor/bcr/bcr.mk)
+
+# BatteryTile
+PRODUCT_PACKAGES += \
+    BatteryTile
