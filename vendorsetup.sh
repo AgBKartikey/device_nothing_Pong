@@ -32,4 +32,10 @@ echo 'Cloning BCR Repo'
 # vendor/bcr
 git clone https://github.com/AgBKartikey/vendor_bcr.git vendor/bcr
 
+echo 'DONE'
+
+echo 'Cloning BatteryTile Repo'
+# packages/apps/BatteryTile
+git clone https://github.com/AgBKartikey/packages_apps_BatteryTile.git packages/apps/BatteryTile
+
 echo 'DONE & COMPLETED'
