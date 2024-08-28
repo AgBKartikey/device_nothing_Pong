@@ -37,3 +37,4 @@ on post-fs-data
 
     # OTG
     chown system system /proc/charger/nt_otg_enable
+    write /proc/charger/nt_otg_enable 4
