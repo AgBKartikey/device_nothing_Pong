@@ -348,7 +348,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-lineage \
+    $(LOCAL_PATH)/overlay-voltage
 
 # QSSI overlays
 PRODUCT_PACKAGES += \
@@ -560,9 +561,8 @@ PRODUCT_BOOT_JARS += \
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/nothing/Pong/Pong-vendor.mk)
 
-# BCR
-$(call inherit-product, vendor/bcr/bcr.mk)
-
 # BatteryTile
 PRODUCT_PACKAGES += \
     BatteryTile
+
+-include vendor/lineage-priv/keys/keys.mk

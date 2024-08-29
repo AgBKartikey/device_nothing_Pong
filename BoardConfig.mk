@@ -5,6 +5,7 @@
 #
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_DUP_RULES := true
 
 DEVICE_PATH := device/nothing/Pong
 
@@ -73,8 +74,8 @@ TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.nt
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/device_framework_matrix.xml \
+    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
 
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
@@ -119,8 +120,6 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := taro
 
 # Partitions
-BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE := false
--include vendor/lineage/config/BoardConfigReservedSize.mk
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
@@ -142,6 +141,40 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+
+# Partitions - reserved size
+ifeq ($(PRODUCT_VIRTUAL_AB_OTA),true)
+    BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE ?= true
+endif
+
+ifneq ($(WITH_GMS),true)
+    BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT ?= -1
+
+    ifeq ($(BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE),true)
+        ifeq ($(PRODUCT_IS_ATV),true)
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 450000000
+        else
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 1188036608
+        endif
+    else
+        ifeq ($(PRODUCT_IS_ATV),true)
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 470000000
+        else
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 1957691392
+        endif
+    endif
+
+    BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT ?= -1
+    ifeq ($(PRODUCT_IS_ATV),true)
+        BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE ?= 40000000
+        BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE ?= 27000000
+    else
+        BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT ?= -1
+        BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE ?= 94371840
+        BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE ?= 94371840
+    endif
+
+endif
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
