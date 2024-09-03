@@ -22,13 +22,17 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.UserHandle;
 import androidx.preference.PreferenceManager;
+
+import org.neoteric.device.DeviceExtras.ChargingControlService;
 
 public class Startup extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, final Intent bootintent) { 
         boolean enabled = false;
+        DeviceExtras.CONTEXT = context;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         enabled = sharedPrefs.getBoolean(DeviceExtras.KEY_POWERSHARE_SWITCH, false);
         if (PowerShareModeSwitch.isSupported() && enabled) {
@@ -37,6 +41,11 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceExtras.KEY_OTG_SWITCH, false);
         if (OTGModeSwitch.isSupported() && enabled) {
         restore(OTGModeSwitch.FILE, enabled);
+        }
+        enabled = sharedPrefs.getBoolean(DeviceExtras.KEY_CHARGING_CONTROL_SWITCH, false);
+        if (enabled) {
+            context.startServiceAsUser(new Intent(context, ChargingControlService.class),
+                UserHandle.CURRENT);
         }
     }
 

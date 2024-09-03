@@ -72,6 +72,11 @@
                 android:resource="@string/device_summary" />
         </activity>
 
+        <!-- Charging Control -->
+        <service
+            android:name="org.neoteric.device.DeviceExtras.ChargingControlService">
+        </service>
+
         <!-- PowerShare tile -->
         <service
             android:name="org.neoteric.device.DeviceExtras.PowerShareTileService"

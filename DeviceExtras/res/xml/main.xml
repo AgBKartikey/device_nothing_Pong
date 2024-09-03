@@ -28,6 +28,13 @@
             android:icon="@drawable/ic_powershare"
             android:title="@string/powershare_mode_title"
             android:summary="@string/powershare_mode_summary" />
+
+    <SwitchPreference
+            android:key="charging_control"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_charging_control"
+            android:title="@string/charging_control_title"
+            android:summary="@string/charging_control_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory

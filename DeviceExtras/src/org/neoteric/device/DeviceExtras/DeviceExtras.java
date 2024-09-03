@@ -36,9 +36,12 @@ import org.neoteric.device.DeviceExtras.R;
 public class DeviceExtras extends PreferenceFragment {
     public static final String KEY_POWERSHARE_SWITCH = "powershare";
     public static final String KEY_OTG_SWITCH = "otg";
+    public static final String KEY_CHARGING_CONTROL_SWITCH = "charging_control";
+    public static Context CONTEXT;
 
     private static TwoStatePreference mPowerShareModeSwitch;
     private static TwoStatePreference mOTGModeSwitch;
+    private static TwoStatePreference mChargingControlSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -59,6 +62,10 @@ public class DeviceExtras extends PreferenceFragment {
             mOTGModeSwitch.setChecked(OTGModeSwitch.isCurrentlyEnabled());
             mOTGModeSwitch.setOnPreferenceChangeListener(new OTGModeSwitch());
         }
+
+        // Charging Control
+        mChargingControlSwitch = (TwoStatePreference) findPreference(KEY_CHARGING_CONTROL_SWITCH);
+        mChargingControlSwitch.setOnPreferenceChangeListener(new ChargingControlModeSwitch());
     }
 
     @Override

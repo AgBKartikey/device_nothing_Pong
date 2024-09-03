@@ -33,4 +33,8 @@
     <!-- QS tile -->
     <string name="accessibility_quick_settings_off">Off</string>
     <string name="accessibility_quick_settings_on">On</string>
+
+    <!-- Charging Control -->
+    <string name="charging_control_title">Charging control</string>
+    <string name="charging_control_summary">This will help keeping the device cool while it is charging</string>
 </resources>
