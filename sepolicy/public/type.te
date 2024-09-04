@@ -1,6 +1,3 @@
-# OTG Switch
-type proc_otg_switch, file_type;
-
 # Device Extras
 type device_extras, domain;
 typeattribute device_extras mlstrustedsubject;

@@ -1,1 +1,2 @@
 rw_dir_file(device_extras, vendor_sysfs_usb_supply)
+rw_dir_file(device_extras, vendor_proc_charger)
