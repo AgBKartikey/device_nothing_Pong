@@ -11,11 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Pong device
 $(call inherit-product, device/nothing/Pong/device.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Mist stuff
+$(call inherit-product, vendor/mist/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_Pong
+PRODUCT_NAME := mist_Pong
 PRODUCT_DEVICE := Pong
 PRODUCT_MANUFACTURER := nothing
 PRODUCT_BRAND := Nothing
@@ -44,3 +44,4 @@ BUILD_FINGERPRINT := Nothing/Pong/Pong:12/SKQ1.230722.001/2406280430:user/releas
 # Flags
 TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
+MIST_BUILDTYPE := OFFICIAL

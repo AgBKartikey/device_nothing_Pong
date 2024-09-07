@@ -572,3 +572,4 @@ $(call inherit-product, vendor/bcr/bcr.mk)
 # BatteryTile
 PRODUCT_PACKAGES += \
     BatteryTile
+-include vendor/lineage-priv/keys/keys.mk
