@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_Pong.mk
+    $(LOCAL_DIR)/halcyon_Pong.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_Pong-user \
-    lineage_Pong-userdebug \
-    lineage_Pong-eng
+    halcyon_Pong-user \
+    halcyon_Pong-userdebug \
+    halcyon_Pong-eng
