@@ -1,0 +1,20 @@
+[
+    {
+        "remote": "github"
+        "repository": "AgBKartikey/packages_apps_ParanoidGlyphPhone2",
+        "target_path": "packages/apps/ParanoidGlyphPhone2"
+        "branch": "14"
+    },
+    {
+        "remote": "github",
+        "target_path": "kernel/nothing/sm8475",
+        "repository": "AgBKartikey/android_kernel_nothing_sm8475.git",
+        "branch": "lineage-21"
+    },
+    {
+        "remote": "gitlab",
+        "target_path": "vendor/nothing/Pong",
+        "repository": "AgBKartikey/vendor_nothing_Pong.git",
+        "branch": "lineage-21"
+    }
+]
